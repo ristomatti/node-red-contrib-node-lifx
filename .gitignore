@@ -40,3 +40,6 @@ package-lock.json
 # IDEA folder and project files
 .idea
 node-red-contrib-node-lifx.iml
+
+# Visual Studio Code Local History extension
+.history
