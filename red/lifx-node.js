@@ -45,7 +45,7 @@ module.exports = function(RED, isOutput) {
     this.lightMessageHandler = function lightMessageHandler(data) {
       if (!data || !data.payload)
         ;
-      else if (!data.payload.reachable) {
+      else if (data.payload.reachable === false) {
         node.status( { fill:"red", shape:"ring", text:"disconnected" } );
       }
       else if (!data.payload.on) {
