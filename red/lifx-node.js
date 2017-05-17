@@ -48,11 +48,11 @@ module.exports = function(RED, isOutput) {
       else if (data.payload.reachable === false) {
         node.status( { fill:"red", shape:"ring", text:"disconnected" } );
       }
-      else if (!data.payload.on) {
+      else if (!data.state.on) {
         node.status( { fill:"grey", shape:"dot", text:"off" } );
       }
       else {
-        node.status( { fill:"yellow", shape:"dot", text: `on (${data.payload.bri}%)` } );
+        node.status( { fill:"yellow", shape:"dot", text: `on (${data.state.brightness}%)` } );
       }
 
       // Send data if output node
