@@ -12,6 +12,10 @@
     <input type="text" id="node-config-input-lights" placeholder="Optional known light addresses">
   </div>
   <div class="form-row">
+    <label for="node-config-input-tolerance"><i class="fa fa-clock-o"></i> Offline tolerance</label>
+    <input type="text" id="node-config-input-tolerance">
+  </div>
+  <div class="form-row">
     <label for="node-config-input-interval"><i class="fa fa-clock-o"></i> Poll interval</label>
     <input type="text" id="node-config-input-interval">
   </div>
@@ -28,25 +32,33 @@
     <li><b>address</b> Optional address to bind to, makes it possible to run multiple servers</li>
     <li><b>broadcast</b> Optional broadcast address, uses 255.255.255.255 by default</li>
     <li><b>lights</b> Optional list of lights (ip addresses)</li>
+    <li><b>tolerance</b> Optional number of discovery cycles before a light is considered offline (between 1-50, defaults to 3)</li>
     <li><b>interval</b> Interval that is used to poll lights for changes (min 500ms)</li>
     <li><b>name</b> Server name</li>
   </ul>
 </script>
 
 <script type="text/javascript">
-RED.nodes.registerType('node-lifx-server',{
+RED.nodes.registerType('node-lifx-server', {
   category: 'config',
   defaults: {
-    name:      { value: 'Lifx Server', required: true  },
+    name:      { value: 'Lifx Server', required: true },
     address:   { required: false },
     broadcast: { required: false },
     lights:    { required: false },
+    tolerance: {
+      value: 3,
+      required: false,
+      validate: function(v) {
+        return ((/^[0-9]+/.test(v) && parseInt(v,10) <= 50) || v === '');
+      }
+    },
     interval: {
       value: 10000,
       required: true,
       validate: function(v) {
         return (/^[0-9]+/.test(v) && parseInt(v,10) >= 500);
-      },
+      }
     },
   },
   label: function() {

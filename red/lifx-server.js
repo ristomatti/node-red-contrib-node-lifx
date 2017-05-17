@@ -19,10 +19,11 @@ module.exports = function(RED) {
     RED.nodes.createNode(self, config);
 
     self.config = {
-      name:     config.name,
-      key:      config.key,
-      network:  config.network,
-      interval: config.interval,
+      name:             config.name,
+      key:              config.key,
+      network:          config.network,
+      interval:         config.interval,
+      offlineTolerance: config.tolerance
     };
 
     // Create server
