@@ -38,7 +38,7 @@
     "color-temp": "0.0.2",
     "enum": "^2.5.0",
     "lodash": "^4.17.10",
-    "node-lifx": "^0.8.0"
+    "node-lifx": "ristomatti/node-lifx.git#es2015-dev"
   },
   "scripts": {
     "test": "mocha test"
