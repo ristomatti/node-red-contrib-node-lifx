@@ -37,8 +37,8 @@
     "color-space": "^1.16.0",
     "color-temp": "0.0.2",
     "enum": "^2.5.0",
-    "lodash": "^4.17.10",
-    "node-lifx": "ristomatti/node-lifx.git#es2015-dev"
+    "lifx-lan-client": "^1.0.2",
+    "lodash": "^4.17.10"
   },
   "scripts": {
     "test": "mocha test"

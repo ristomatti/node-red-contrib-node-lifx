@@ -1,7 +1,7 @@
 /* eslint no-console: off */
 'use strict';
 
-var Lifx = require('node-lifx').Client;
+var Lifx = require('lifx-lan-client').Client;
 var client = new Lifx();
 
 client.on('error', function(err) {
