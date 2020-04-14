@@ -9,7 +9,7 @@ This module provides input and output nodes for communicating with Lifx lights, 
 * Trigger events for light changes
 * Self syncing, uses background polling to detect external changes to light
 * Displays current state for light in Node-Red ui
-* ability to set waveform
+* ability to set waveform (EXPERIMENTAL)
 
 
 ### Examples
@@ -66,7 +66,7 @@ Waveform is a way to create effect in lifx bulbs, like the breath effect in the 
   "period": 800,
   "cycles": 3,
   "skewRatio": 0,
-  "waveform": "SINE"  // one of  SAW, SINE, HALF_SINE, TRIANGLE, PULSE
+  "waveform": "SINE"  // one of SAW, SINE, HALF_SINE, TRIANGLE, PULSE
 }
 ```
 
