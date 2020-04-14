@@ -1,7 +1,7 @@
 {
   "name": "node-red-contrib-node-lifx",
-  "version": "0.9.3",
-  "description": "Control Lifx lights using Node-RED.",
+  "version": "0.10.0",
+  "description": "Control LIFX lights using Node-RED.",
   "author": "jdomeij",
   "maintainers": [
     "Ristomatti Airo <ristomatti.airo@gmail.com>"
