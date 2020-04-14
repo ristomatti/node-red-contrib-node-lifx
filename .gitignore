@@ -35,7 +35,6 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-package-lock.json
 
 # IDEA folder and project files
 .idea
