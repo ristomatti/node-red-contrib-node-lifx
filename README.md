@@ -9,6 +9,7 @@ This module provides input and output nodes for communicating with Lifx lights, 
 * Trigger events for light changes
 * Self syncing, uses background polling to detect external changes to light
 * Displays current state for light in Node-Red ui
+* ability to set waveform
 
 
 ### Examples
@@ -54,6 +55,20 @@ More advanced way to control the light is to send an object payload with one or 
 | `cr`, `mired` or `mirek` | Set Mired color temperature (153 - 500) |
 | `kelvin` | Set kelvin color temperature (2200-6500) |
 | `duration` | Transition time (ms) |
+
+*setting waveform*
+Waveform is a way to create effect in lifx bulbs, like the breath effect in the Lifx App. Setting a wave form will be at the following JSON form.
+
+```json
+{
+  "isTransient": true,
+  "color": {"hue": 0, "saturation": 65535, "brightness": 65535, "kelvin": 3500},
+  "period": 800,
+  "cycles": 3,
+  "skewRatio": 0,
+  "waveform": "SINE"  // one of  SAW, SINE, HALF_SINE, TRIANGLE, PULSE
+}
+```
 
 **Notice:** to get the same behavioras the Lifx app when modifying the color temperature you will need to manually set the saturation to zero. This is because the Lifx light can adjust temperature and color independent of each other and I didn't want to limit the choices for the user.
 
