@@ -88,7 +88,12 @@ module.exports = function(RED, isOutput) {
     node.on('input', (msg) => {
       if (!node.isOutput && node.lightHandler) {
         try {
-          node.lightHandler.setLightState(msg.payload);
+          if (msg.payload.waveform) {
+            node.lightHandler.setLightWaveForm(msg.payload);
+          } else {
+            node.lightHandler.setLightState(msg.payload);
+          }
+          
         }
         catch (e) {
           node.error(e.message, e.stack);
