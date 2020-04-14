@@ -1,14 +1,14 @@
-# Lifx nodes for Node-Red
-A solution to control Lifx lights over local network using Node-Red, uses [lifx-lan-client library](https://github.com/node-lifx/lifx-lan-client) for communicating with the lights.
+# LIFX nodes for Node-RED
+A solution to control LIFX lights over local network using Node-RED, uses [lifx-lan-client library](https://github.com/node-lifx/lifx-lan-client) for communicating with the lights.
 
-This module provides input and output nodes for communicating with Lifx lights, the input node accepts multiple color format and automatically converts the values to the right format. 
+This module provides input and output nodes for communicating with LIFX lights, the input node accepts multiple color format and automatically converts the values to the right format. 
 
 
 ### Features
 * Convert input arguments to light specific arguments
 * Trigger events for light changes
 * Self syncing, uses background polling to detect external changes to light
-* Displays current state for light in Node-Red ui
+* Displays current state for light in Node-RED UI
 * ability to set waveform (EXPERIMENTAL)
 
 
@@ -57,7 +57,7 @@ More advanced way to control the light is to send an object payload with one or 
 | `duration` | Transition time (ms) |
 
 *setting waveform*
-Waveform is a way to create effect in lifx bulbs, like the breath effect in the Lifx App. Setting a wave form will be at the following JSON form.
+Waveform is a way to create effect in lifx bulbs, like the breath effect in the LIFX App. Setting a wave form will be at the following JSON form.
 
 ```json
 {
@@ -70,7 +70,7 @@ Waveform is a way to create effect in lifx bulbs, like the breath effect in the 
 }
 ```
 
-**Notice:** to get the same behavioras the Lifx app when modifying the color temperature you will need to manually set the saturation to zero. This is because the Lifx light can adjust temperature and color independent of each other and I didn't want to limit the choices for the user.
+**Notice:** to get the same behavioras the LIFX app when modifying the color temperature you will need to manually set the saturation to zero. This is because the LIFX light can adjust temperature and color independent of each other and I didn't want to limit the choices for the user.
 
 Example: Sending the following to the light will turn it on and dim it upp to 77% over 10 seconds
 
@@ -93,7 +93,7 @@ Example output from change event
   "id": "d073d5015103",
   "info": {
     "id": "d073d5015103",
-    "name": "Lifx Black",
+    "name": "LIFX Black",
     "address": "192.168.1.107", 
     "model": "Original 1000",
     "capability": ["temperature", "color"]
