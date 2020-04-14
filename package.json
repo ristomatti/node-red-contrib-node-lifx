@@ -3,13 +3,16 @@
   "version": "0.9.3",
   "description": "Control Lifx lights using Node-RED.",
   "author": "jdomeij",
-  "homepage": "https://github.com/jdomeij/node-red-contrib-node-lifx",
+  "maintainers": [
+    "Ristomatti Airo <ristomatti.airo@gmail.com>"
+  ],
+  "homepage": "https://github.com/ristomatti/node-red-contrib-node-lifx",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jdomeij/node-red-contrib-node-lifx.git"
+    "url": "https://github.com/ristomatti/node-red-contrib-node-lifx.git"
   },
   "bugs": {
-    "url": "https://github.com/jdomeij/node-red-contrib-node-lifx/issues"
+    "url": "https://github.com/ristomatti/node-red-contrib-node-lifx/issues"
   },
   "keywords": [
     "node-red",
