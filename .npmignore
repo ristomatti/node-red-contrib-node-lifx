@@ -36,5 +36,12 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+# IDEA folder and project files
+.idea
+node-red-contrib-node-lifx.iml
+
+# Visual Studio Code Local History extension
+.history
+
 # Documentation (images)
 doc
