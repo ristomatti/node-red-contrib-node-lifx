@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-node-lifx",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Control LIFX lights using Node-RED.",
   "author": "jdomeij",
   "maintainers": [
@@ -35,12 +35,12 @@
     "mocha": "^5.2.0"
   },
   "dependencies": {
-    "async": "^2.6.1",
+    "async": "^2.6.3",
     "color-convert": "^1.9.2",
     "color-space": "^1.16.0",
     "color-temp": "0.0.2",
     "enum": "^2.5.0",
-    "lifx-lan-client": "^1.0.2",
+    "lifx-lan-client": "^1.0.3",
     "lodash": "^4.17.15"
   },
   "scripts": {
