@@ -12,6 +12,14 @@
     <input type="text" id="node-config-input-lights" placeholder="Optional known light addresses">
   </div>
   <div class="form-row">
+    <label for="node-config-input-discoveryInterval"><i class="fa fa-clock-o"></i> Discovery interval</label>
+    <input type="text" id="node-config-input-discoveryInterval">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-lightOfflineTolerance"><i class="fa fa-clock-o"></i> Offline tolerance</label>
+    <input type="text" id="node-config-input-lightOfflineTolerance">
+  </div>
+  <div class="form-row">
     <label for="node-config-input-interval"><i class="fa fa-clock-o"></i> Poll interval</label>
     <input type="text" id="node-config-input-interval">
   </div>
@@ -28,7 +36,9 @@
     <li><b>address</b> Optional address to bind to, makes it possible to run multiple servers</li>
     <li><b>broadcast</b> Optional broadcast address, uses 255.255.255.255 by default</li>
     <li><b>lights</b> Optional list of lights (ip addresses)</li>
-    <li><b>interval</b> Interval that is used to poll lights for changes (min 500ms)</li>
+    <li><b>discoveryInterval</b> Optional interval that is used to discover new lights and light online status, 5000ms by default (min 1000ms)</li>
+    <li><b>lightOfflineTolerance</b> Optional count of discoveries before a light is considered offline, 3 by default (min 1)</li>
+    <li><b>interval</b> Optional interval that is used to poll lights for changes, 10000ms by default (min 500ms)</li>
     <li><b>name</b> Server name</li>
   </ul>
 </script>
@@ -41,11 +51,25 @@ RED.nodes.registerType('node-lifx-server',{
     address:   { required: false },
     broadcast: { required: false },
     lights:    { required: false },
-    interval: {
+    discoveryInterval: {
       value: 10000,
-      required: true,
+      required: false,
       validate: function(v) {
-        return (/^[0-9]+/.test(v) && parseInt(v,10) >= 500);
+        return Number.isInteger(v) && parseInt(v,10) >= 500;
+      },
+    },
+    lightOfflineTolerance: {
+      value: 3,
+      required: false,
+      validate: function(v) {
+        return Number.isInteger(v) && parseInt(v,10) >= 1;
+      }
+    },
+    interval: {
+      value: 5000,
+      required: false,
+      validate: function(v) {
+        return Number.isInteger(v) && parseInt(v,10) >= 5000;
       },
     },
   },

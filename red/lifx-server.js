@@ -19,9 +19,11 @@ module.exports = function(RED) {
     RED.nodes.createNode(self, config);
 
     self.config = {
-      name:     config.name,
-      key:      config.key,
-      network:  config.network,
+      name: config.name,
+      key: config.key,
+      network:config.network,
+      discoveryInterval: config.discoveryInterval,
+      lightOfflineTolerance: config.lightOfflineTolerance,
       interval: config.interval,
     };
 
