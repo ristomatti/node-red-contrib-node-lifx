@@ -40,8 +40,8 @@
     "color-space": "^1.16.0",
     "color-temp": "0.0.2",
     "enum": "^2.5.0",
-    "lifx-lan-client": "^1.0.3",
-    "lodash": "^4.17.15"
+    "lifx-lan-client": "^2.1.1",
+    "lodash": "^4.17.21"
   },
   "scripts": {
     "test": "mocha test"
